@@ -1,220 +1,535 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>FOODforALL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.css">
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" 
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glacier Water Lab — SDG 6 Clean Water Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--HEADER-->
+    <!-- HEADER -->
     <header class="header">
-        <div class="container">
-            <nav class="navigation">
-                <div class="header-mobile">
-                    <a class="logo header__link link" href="./index.html" aria-label="WebStudio" lang="en">FOOD<span class="logo--reverse">forALL</span></a>
-                    <button type="button" class="header__menu-button" aria-expanded="false" data-menu-button>
-                        <svg class="menu-button__svg" aria-label="переключатель мобильного меню">
-                            <use class="icon-menu" href="./images/svg/sprite.svg#icon-menu"> </use>
-                            <use class="icon-cross" href="./images/svg/sprite.svg#icon-close"> </use>
-                        </svg>
-                    </button>
-                </div>
-                <div class="header__menu-container" id="menu-container" data-menu>
-                    <ul class="navigation__list list">
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-link header__link link active-page" href="./index.html">General Information</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a class="navigation__list-link header__link link" href="./portfolio.html">List of Organizations</a>
-                        </li>
-                    </ul>  
-                </div>
+        <div class="container header__container">
+            <a href="#hero" class="logo">💧 Glacier Water Lab</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#hero" class="nav__link">Home</a></li>
+                    <li><a href="#experiment" class="nav__link">Experiment</a></li>
+                    <li><a href="#filtration" class="nav__link">Filtration System</a></li>
+                    <li><a href="#quality" class="nav__link">Water Quality</a></li>
+                    <li><a href="#sdg" class="nav__link">SDG 6</a></li>
+                    <li><button type="button" class="nav__link nav__link--cta" id="open-ecoquest">🎮 Eco Quest</button></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
-        </div>           
+        </div>
     </header>
+
     <main>
-        <!--HERO-->
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">EFFECTIVE SOLUTION: <br>FOOD REDISTRIBUTION PROGRAMS</h1>
-                <button class="modal-button" type="button" data-modal-open>Contact for partners</button> 
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">From Glacier to Glass: Clean Water Through Filtration & Conservation</h1>
+                    <p class="hero__subtitle">
+                        Glacier water may look clear, but it can still contain sediment and microorganisms.
+                        This site explains our filtration experiment, shows how water quality improves,
+                        and teaches why saving clean water is essential (SDG 6).
+                    </p>
+                    <a href="#experiment" class="btn btn--primary">See Experiment</a>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__drop"></div>
+                    <div class="hero__drop hero__drop--2"></div>
+                    <div class="hero__drop hero__drop--3"></div>
+                </div>
             </div>
         </section>
-        <!--COMPANY ADVANTAGES-->
-        <section class="advantages">
+
+        <!-- EXPERIMENT OVERVIEW -->
+        <section id="experiment" class="experiment section">
             <div class="container">
-                <h2 class="section-title visually-hidden">Преимущества компании</h2>
-                <ul class="advantages__list list">
-                    <li class="advantages__list-item">
-                        <h3 class="advantages__list-subtitle advantages__list-subtitle--details">Environmentally Efficient</h3>
-                        <p class="advantages__list-description">Redirecting food to those in need instead of landfills helps conserve resources and reduces environmental harm, making it a sustainable practice.</p>
-                    </li>                          
-                    <li class="advantages__list-item">
-                        <h3 class="advantages__list-subtitle advantages__list-subtitle--punctuality">Time-Effective</h3>
-                        <p class="advantages__list-description">Redistributing surplus food quickly and directly addresses hunger, saving time compared to other food distribution methods.</p>
-                    </li>
-                    <li class="advantages__list-item">
-                        <h3 class="advantages__list-subtitle advantages__list-subtitle--planning">Cost-Effective</h3>
-                        <p class="advantages__list-description">Food redistribution reduces the need for costly waste management, saving money for both businesses and nonprofits.</p>
-                    </li>
-                    <li class="advantages__list-item">
-                        <h3 class="advantages__list-subtitle advantages__list-subtitle--technologies">Improves Supply Chain Efficiency</h3>
-                        <p class="advantages__list-description">By reallocating excess food, businesses can streamline operations and reduce inventory waste, ensuring a more efficient supply chain.</p>
-                    </li>
-                </ul>
+                <h2 class="section__title">Experiment Overview</h2>
+                <div class="experiment__grid">
+                    <div class="experiment__text">
+                        <p>Glacier water often contains <strong>sediment and impurities</strong> that aren't visible to the naked eye.</p>
+                        <p>A simple physical filtration model was built using <strong>several cups</strong>, each filled with a different layer:</p>
+                        <ul class="experiment__list">
+                            <li>⬛ Ballast stone / large stones</li>
+                            <li>⚫ Small stones</li>
+                            <li>🟡 Sand</li>
+                            <li>⚪ Cotton</li>
+                        </ul>
+                        <p>Water flows <strong>gravity-fed</strong> from one cup to the next. After filtration, the water is <strong>boiled for purification</strong>.</p>
+                        <p>Evaluation is visual only: clarity, color, odor, visible particles.</p>
+                    </div>
+                    <div class="experiment__visual">
+                        <div class="infographic infographic--setup">
+                            <div class="cup-tower">
+                                <div class="cup cup--1">
+                                    <span class="cup__label">Large Stones</span>
+                                    <div class="cup__content cup__content--stones-large"></div>
+                                </div>
+                                <div class="cup cup--2">
+                                    <span class="cup__label">Small Stones</span>
+                                    <div class="cup__content cup__content--stones-small"></div>
+                                </div>
+                                <div class="cup cup--3">
+                                    <span class="cup__label">Sand</span>
+                                    <div class="cup__content cup__content--sand"></div>
+                                </div>
+                                <div class="cup cup--4">
+                                    <span class="cup__label">Cotton</span>
+                                    <div class="cup__content cup__content--cotton"></div>
+                                </div>
+                                <div class="cup cup--final">
+                                    <span class="cup__label">Clean Water</span>
+                                    <div class="cup__content cup__content--water"></div>
+                                </div>
+                            </div>
+                            <div class="water-flow"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <!--COMPANY SERVICES-->
-        <section class="services">
+
+        <!-- FILTRATION SYSTEM -->
+        <section id="filtration" class="filtration section section--alt">
             <div class="container">
+                <h2 class="section__title">Filtration System — Multi-Cup Setup</h2>
+                <p class="section__subtitle">Each layer serves a specific purpose in purifying glacier water</p>
+                <div class="filtration__cards">
+                    <div class="card card--stage">
+                        <div class="card__icon">⬛</div>
+                        <h3 class="card__title">Stage 1: Ballast Stone</h3>
+                        <p class="card__text">Large stones remove coarse debris like twigs, leaves, and large particles from the water.</p>
+                    </div>
+                    <div class="card card--stage">
+                        <div class="card__icon">⚫</div>
+                        <h3 class="card__title">Stage 2: Small Stones</h3>
+                        <p class="card__text">Medium-sized pebbles trap medium particles that passed through the first layer.</p>
+                    </div>
+                    <div class="card card--stage">
+                        <div class="card__icon">🟡</div>
+                        <h3 class="card__title">Stage 3: Sand</h3>
+                        <p class="card__text">Fine sand filters sediment, significantly improving water clarity and color.</p>
+                    </div>
+                    <div class="card card--stage">
+                        <div class="card__icon">⚪</div>
+                        <h3 class="card__title">Stage 4: Cotton</h3>
+                        <p class="card__text">Cotton provides final polishing, capturing very small residue particles.</p>
+                    </div>
+                </div>
+                <div class="filtration__diagram">
+                    <div class="diagram-flow">
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--dirty">💧</div>
+                            <span>Dirty Water</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--filter">⬛</div>
+                            <span>Stage 1</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--filter">⚫</div>
+                            <span>Stage 2</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--filter">🟡</div>
+                            <span>Stage 3</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--filter">⚪</div>
+                            <span>Stage 4</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-step">
+                            <div class="diagram-cup diagram-cup--clean">💧</div>
+                            <span>Filtered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WATER QUALITY IMPROVEMENT -->
+        <section id="quality" class="quality section">
+            <div class="container">
+                <h2 class="section__title">Water Quality Improvement</h2>
+                <p class="section__subtitle">Visual demonstration of filtration effectiveness</p>
                 
-                <ul class="services__list list">
-                    <h2 class="section-title">Environmental Impact of Food Waste</h2>
-                    <li class="services__list-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 50px; font-size: 20px;">
-
-
-                        <img class="services__list-image" src="./images/services/service1.jpg" src="./images/services/service1.jpg" style="margin-bottom: 50px;">
-                        <div>
-                           Food waste is one of the leading contributors to environmental degradation, with far-reaching consequences. When food is thrown away, it doesn't just disappear; it ends up in landfills, where it decomposes anaerobically (without oxygen) and produces methane, a potent greenhouse gas. Methane is over 25 times more harmful to the climate than carbon dioxide over a 100-year period, contributing significantly to global warming. The environmental impact extends further to the entire food production process—growing, harvesting, transporting, and processing food all require water, energy, and land. When food is wasted, all these resources are squandered. For example, it is estimated that roughly 1.4 billion hectares of land, which is about 28% of the world’s agricultural land, is used to produce food that is never consumed.
-
-                            The carbon footprint of food waste is staggering. According to the Food and Agriculture Organization (FAO), the carbon footprint of food waste is responsible for about 8% of global greenhouse gas emissions, nearly the same amount as all the cars, trucks, planes, and ships in the world combined. This means that food waste isn't just a waste of food—it's a waste of energy, water, and labor that accelerates climate change. In countries like North Macedonia, where agriculture plays a significant role in the economy, the environmental costs of food waste are particularly concerning. Resources such as water and fertile land, vital to the country’s agricultural sector, are being used inefficiently, contributing to resource depletion and environmental degradation. Reducing food waste in North Macedonia could significantly lessen these impacts, preserving both the environment and valuable resources for future generations.
+                <div class="quality__glasses">
+                    <div class="glass glass--before">
+                        <div class="glass__container">
+                            <div class="glass__water glass__water--dirty">
+                                <div class="sediment"></div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="services__list-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 50px; font-size: 20px;">
-                        <h2 class="section-title">Social Impact of Food Waste</h2>
-                        <img class="services__list-image"  src="./images/services/service2.jpeg" style="margin-bottom: 50px;">
-                        <div >
-                            On the social side, food waste is closely tied to food insecurity, a growing global issue. While millions of tons of food are discarded every year, millions of people, including children, face hunger and malnutrition. Around 820 million people worldwide are affected by hunger, and about one-third of the food produced in the world goes to waste. This disparity is even more pressing in countries like North Macedonia, where food insecurity remains a concern for certain population groups. In fact, many households in North Macedonia struggle to access sufficient, nutritious food, leading to poor health outcomes, especially among children and elderly citizens.
+                        <h3 class="glass__label">Before Filtration</h3>
+                    </div>
+                    <div class="glass__arrow">➜</div>
+                    <div class="glass glass--after">
+                        <div class="glass__container">
+                            <div class="glass__water glass__water--filtered"></div>
+                        </div>
+                        <h3 class="glass__label">After Filtration</h3>
+                    </div>
+                    <div class="glass__arrow">➜</div>
+                    <div class="glass glass--boiled">
+                        <div class="glass__container">
+                            <div class="glass__water glass__water--clean">
+                                <div class="sparkle"></div>
+                            </div>
+                        </div>
+                        <h3 class="glass__label">After Boiling</h3>
+                    </div>
+                </div>
 
-                                The social impact of food waste extends beyond the direct effects of hunger. Wasting food exacerbates social inequality, especially in communities where food insecurity is already high. By redistributing surplus food to charities, shelters, and local communities, food waste can be transformed into a valuable resource that helps alleviate poverty and provides sustenance to those in need. In North Macedonia, several local organizations are already working to address food insecurity through food banks and redistribution initiatives, showing that even small-scale efforts can make a significant impact in tackling hunger and poverty.
-                                
-                                Moreover, food waste is a significant burden on families, especially in lower-income communities. Not only does food waste perpetuate cycles of food insecurity, but it also places an economic strain on households. Families who are unable to access affordable and healthy food may spend more of their limited income on expensive alternatives or face health risks due to inadequate nutrition. Reducing food waste in North Macedonia can improve food access, ensure more sustainable consumption, and allow households to use their resources more effectively, ultimately benefiting the economy and public health.</h3>
-                        </div>
-                    </li>
-                    <li class="services__list-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 50px; font-size: 20px;">
-                        <h2 class="section-title">The Intersection of Environmental and Social Impact</h2>
-                        <img class="services__list-image" src="./images/services/service3.webp" style="margin-bottom: 50px;">
-                        <div >
-                            Addressing food waste is not just about protecting the planet—it's about fostering a more equitable and sustainable society. The environmental and social impacts are deeply interconnected: food waste contributes to environmental harm while exacerbating social inequalities. By redistributing food that would otherwise go to waste, we not only help conserve natural resources but also tackle hunger and food insecurity. In countries like North Macedonia, where both food waste and food insecurity are pressing concerns, food redistribution can serve as a key solution to bridging the gap between excess and need. Efforts to reduce food waste offer an opportunity to create a more just, resilient, and sustainable food system—one where resources are used efficiently, communities are supported, and the planet is protected for future generations.
-                        </div>
-                    </li>
-                </ul>
+                <div class="quality__summary">
+                    <div class="quality__card">
+                        <h4>❌ Before Filtration</h4>
+                        <ul>
+                            <li>Cloudy appearance</li>
+                            <li>Visible sediment</li>
+                            <li>Earthy odor</li>
+                        </ul>
+                    </div>
+                    <div class="quality__card">
+                        <h4>✅ After Filtration</h4>
+                        <ul>
+                            <li>Much clearer</li>
+                            <li>Almost no sediment</li>
+                            <li>Reduced odor</li>
+                        </ul>
+                    </div>
+                    <div class="quality__card">
+                        <h4>🌟 After Boiling</h4>
+                        <ul>
+                            <li>Fully transparent</li>
+                            <li>No visible impurities</li>
+                            <li>Safe appearance</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-        <!--COMPANY TEAM-->
 
+        <!-- SDG 6 SECTION -->
+        <section id="sdg" class="sdg section section--alt">
+            <div class="container">
+                <h2 class="section__title">United Nations SDG 6</h2>
+                <p class="section__subtitle">Clean Water and Sanitation</p>
+                
+                <div class="sdg__content">
+                    <div class="sdg__poster">
+                        <div class="sdg__badge">
+                            <span class="sdg__number">6</span>
+                            <span class="sdg__text">CLEAN WATER<br>AND SANITATION</span>
+                        </div>
+                        <div class="sdg__icon">💧</div>
+                    </div>
+                    <div class="sdg__info">
+                        <p class="sdg__description">
+                            <strong>SDG 6</strong> focuses on access to safe water, improving water quality, 
+                            and using water resources responsibly.
+                        </p>
+                        <p class="sdg__description">
+                            Our experiment supports <strong>SDG Target 6.3</strong> (improving water quality 
+                            through filtration and treatment) and <strong>SDG Target 6.4</strong> (responsible 
+                            use and conservation of clean water).
+                        </p>
+                        <p class="sdg__description">
+                            This project is part of the <strong>UN 2030 Agenda for Sustainable Development</strong>.
+                        </p>
+                        <div class="sdg__targets">
+                            <div class="target">
+                                <span class="target__number">6.3</span>
+                                <span class="target__text">Improve water quality through treatment</span>
+                            </div>
+                            <div class="target">
+                                <span class="target__number">6.4</span>
+                                <span class="target__text">Water-use efficiency & sustainable withdrawals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ECO QUEST MODAL -->
+    <div class="ecoquest-modal" id="ecoquest-modal">
+        <div class="ecoquest-modal__overlay" id="ecoquest-overlay"></div>
+        <div class="ecoquest-modal__container">
+            <button class="ecoquest-modal__close" id="close-ecoquest">✕</button>
+            <section class="ecoquest section">
+            <div class="container">
+                <div class="ecoquest__header">
+                    <h2 class="section__title">🎮 Eco Quest — Save Clean Water</h2>
+                    <p class="section__subtitle">Complete daily challenges to become a Water Guardian! Every action counts.</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="ecoquest__progress">
+                    <div class="progress__header">
+                        <span class="progress__label">Your Water Saving Progress</span>
+                        <span class="progress__value" id="progress-text">0 / 3000 ml</span>
+                    </div>
+                    <div class="progress__bar">
+                        <div class="progress__fill" id="progress-fill"></div>
+                        <div class="progress__milestone" style="left: 16.6%" data-ml="500">
+                            <span class="milestone__dot"></span>
+                            <span class="milestone__label">500ml</span>
+                        </div>
+                        <div class="progress__milestone" style="left: 33.3%" data-ml="1000">
+                            <span class="milestone__dot"></span>
+                            <span class="milestone__label">1L</span>
+                        </div>
+                        <div class="progress__milestone" style="left: 66.6%" data-ml="2000">
+                            <span class="milestone__dot"></span>
+                            <span class="milestone__label">2L</span>
+                        </div>
+                        <div class="progress__milestone" style="left: 100%" data-ml="3000">
+                            <span class="milestone__dot"></span>
+                            <span class="milestone__label">3L</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ecoquest__game">
+                    <form class="ecoquest__form" id="ecoquest-form">
+                        <!-- Bathroom Category -->
+                        <div class="ecoquest__category">
+                            <h3 class="category__title">🚿 Bathroom</h3>
+                            <div class="category__options">
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="200" data-action="tap">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Turn off tap while brushing teeth</span>
+                                        <span class="ecoquest__ml">+200 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="500" data-action="shower">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Short shower (5 min) instead of bath</span>
+                                        <span class="ecoquest__ml">+500 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="150" data-action="showeroff">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Turn off shower while soaping</span>
+                                        <span class="ecoquest__ml">+150 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="100" data-action="toilet">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Use half-flush when possible</span>
+                                        <span class="ecoquest__ml">+100 ml</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Kitchen Category -->
+                        <div class="ecoquest__category">
+                            <h3 class="category__title">🍳 Kitchen</h3>
+                            <div class="category__options">
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="300" data-action="dishes">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Use dishwasher instead of hand washing</span>
+                                        <span class="ecoquest__ml">+300 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="150" data-action="veggies">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Wash vegetables in a bowl, not running water</span>
+                                        <span class="ecoquest__ml">+150 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="100" data-action="defrost">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Defrost food in fridge, not under tap</span>
+                                        <span class="ecoquest__ml">+100 ml</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Laundry & Garden Category -->
+                        <div class="ecoquest__category">
+                            <h3 class="category__title">🌿 Home & Garden</h3>
+                            <div class="category__options">
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="200" data-action="laundry">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Wash full loads only</span>
+                                        <span class="ecoquest__ml">+200 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="100" data-action="plants">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Reuse cooking water for plants</span>
+                                        <span class="ecoquest__ml">+100 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="400" data-action="rain">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Collect rainwater for gardening</span>
+                                        <span class="ecoquest__ml">+400 ml</span>
+                                    </span>
+                                </label>
+                                <label class="ecoquest__option">
+                                    <input type="checkbox" name="action" value="300" data-action="morning">
+                                    <span class="ecoquest__checkbox"></span>
+                                    <span class="ecoquest__label">
+                                        <span class="option__text">Water plants in morning (less evaporation)</span>
+                                        <span class="ecoquest__ml">+300 ml</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn--primary btn--calculate" id="calculate-btn">
+                            🎯 Calculate My Impact
+                        </button>
+                    </form>
+                    
+                    <div class="ecoquest__results">
+                        <div class="ecoquest__result" id="ecoquest-result">
+                            <div class="result__display">
+                                <span class="result__value" id="result-value">0</span>
+                                <span class="result__unit">ml saved daily</span>
+                            </div>
+                            <div class="result__liters" id="result-liters"></div>
+                            <div class="result__badge" id="result-badge">
+                                <span class="badge__icon">💧</span>
+                                <span class="badge__text">Start checking actions!</span>
+                            </div>
+                        </div>
+
+                        <!-- Achievements -->
+                        <div class="ecoquest__achievements">
+                            <h4 class="achievements__title">🏆 Achievements</h4>
+                            <div class="achievements__grid">
+                                <div class="achievement" id="ach-first" data-unlocked="false">
+                                    <span class="achievement__icon">🌱</span>
+                                    <span class="achievement__name">First Step</span>
+                                    <span class="achievement__desc">Save any water</span>
+                                </div>
+                                <div class="achievement" id="ach-500" data-unlocked="false">
+                                    <span class="achievement__icon">💧</span>
+                                    <span class="achievement__name">Water Saver</span>
+                                    <span class="achievement__desc">Save 500ml+</span>
+                                </div>
+                                <div class="achievement" id="ach-1000" data-unlocked="false">
+                                    <span class="achievement__icon">🌊</span>
+                                    <span class="achievement__name">Liter Hero</span>
+                                    <span class="achievement__desc">Save 1 liter+</span>
+                                </div>
+                                <div class="achievement" id="ach-2000" data-unlocked="false">
+                                    <span class="achievement__icon">🌍</span>
+                                    <span class="achievement__name">Eco Warrior</span>
+                                    <span class="achievement__desc">Save 2 liters+</span>
+                                </div>
+                                <div class="achievement" id="ach-all" data-unlocked="false">
+                                    <span class="achievement__icon">⭐</span>
+                                    <span class="achievement__name">Perfectionist</span>
+                                    <span class="achievement__desc">Complete all actions</span>
+                                </div>
+                                <div class="achievement" id="ach-max" data-unlocked="false">
+                                    <span class="achievement__icon">👑</span>
+                                    <span class="achievement__name">Water Guardian</span>
+                                    <span class="achievement__desc">Save 3 liters+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fun Facts -->
+                <div class="ecoquest__facts">
+                    <h3 class="facts__title">💡 Did You Know?</h3>
+                    <div class="facts__grid">
+                        <div class="fact">
+                            <span class="fact__icon">🚿</span>
+                            <p class="fact__text">A 5-minute shower uses <strong>40 liters</strong> of water</p>
+                        </div>
+                        <div class="fact">
+                            <span class="fact__icon">🚰</span>
+                            <p class="fact__text">A dripping tap wastes <strong>15 liters</strong> per day</p>
+                        </div>
+                        <div class="fact">
+                            <span class="fact__icon">🌍</span>
+                            <p class="fact__text"><strong>2.2 billion</strong> people lack safe drinking water</p>
+                        </div>
+                        <div class="fact">
+                            <span class="fact__icon">💧</span>
+                            <p class="fact__text">Only <strong>1%</strong> of Earth's water is drinkable</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Challenge -->
+                <div class="ecoquest__challenge">
+                    <div class="challenge__content">
+                        <span class="challenge__badge">🎯 Daily Challenge</span>
+                        <h3 class="challenge__title">Can you save 1 liter today?</h3>
+                        <p class="challenge__text">Complete at least 5 water-saving actions to reach the daily goal and earn the "Liter Hero" achievement!</p>
+                    </div>
+                    <div class="challenge__meter">
+                        <div class="meter__glass">
+                            <div class="meter__water" id="meter-water"></div>
+                            <div class="meter__line meter__line--1"><span>1L</span></div>
+                            <div class="meter__line meter__line--2"><span>2L</span></div>
+                            <div class="meter__line meter__line--3"><span>3L</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </div>
+    </div>
     </main>
-    <!--FOOTER-->
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="tablet-wrapper">
-                <div class="address-wrapper"> 
-                    <a class="logo link" href="./index.html" aria-label="WebStudio" lang="en">FOOD<span class="logo--reverse">forALL</span></a>
-                    <!-- <address class="address">
-                        <a class="address__item address__item--place link" href="https://goo.gl/maps/fexX8swV8cYwK8N79" target="blank">г. Киев, пр-т Леси Украинки, 26</a>
-                        <a class="address__item address__item--contact link" href="mailto:info@example.com">info@example.com</a>
-                        <a class="address__item address__item--contact link" href="+380991111111">+38 099 111 11 11</a>
-                    </address> -->
-                </div>
-                <div class="join-us">
-                    <b class="join-us__slogan">JOIN US</b>
-                    <ul class="social-list list">
-                        <li class="social-list__item">
-                            <a class="social-list__link" href="">
-                                <svg class="social-list__svg">
-                                    <use href="./images/svg/sprite.svg#icon-instagram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <!-- <li class="social-list__item">
-                            <a class="social-list__link" href="">
-                                <svg class="social-list__svg">
-                                    <use href="./images/svg/sprite.svg#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li> -->
-                        <li class="social-list__item">
-                                <a class="social-list__link" href="">
-                                    <svg class="social-list__svg">
-                                        <use href="./images/svg/sprite.svg#icon-facebook"></use>
-                                    </svg>
-                                </a>
-                        </li>
-                        <li class="social-list__item">
-                            <a class="social-list__link" href="">
-                                <svg class="social-list__svg">
-                                    <use href="./images/svg/sprite.svg#icon-linkedin"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="submit">
-                <b class="submit__slogan">Get a subscription</b>
-                <form class="submit__form" action="#">
-                    <input class="submit__email" type="email" name="user-email" placeholder="E-mail">
-                    <button class="submit__button" type="submit">SUBSCRIBE
-                            <svg class="submit__svg">
-                                <use href="./images/svg/sprite.svg#icon-send"></use>
-                            </svg>
-                    </button>
-                </form>
-            </div>
+            <p class="footer__text">
+                💧 Glacier Water Filtration Project — Supports UN SDG 6 (Clean Water & Sanitation)
+            </p>
+            <p class="footer__year">© 2025 — Educational Project</p>
         </div>
     </footer>
 
-    <!--MODAL-->
-    <div class="backdrop is-hidden" data-modal>
-        <div class="modal" style="z-index: 10000;">
-            <button type="button" class="close-button" data-modal-close>
-                <svg class="close-button__svg"> 
-                    <use href="./images/svg/sprite.svg#icon-vector"> </use>
-                </svg>
-            </button>
-            <div class="modal-wrapper">
-                <h2 class="modal-slogan">Please fill in the information, we will contact you soon</h2>
-                <form action="#" method="GET" class="modal-form">
-                    <label class="modal-form__label" for="name">Organization name</label>
-                    <div class="modal-form__container">
-                        <input class="modal-form__input" type="text" name="user-name" id="name" minlength="2">
-                         <svg class="modal-form__svg">
-                            <use href="./images/svg/sprite.svg#icon-person-black"></use>
-                        </svg>
-                    </div>
-    
-                    <label class="modal-form__label" for="tel">Phone</label>
-                    <div class="modal-form__container">
-                        <input class="modal-form__input" type="tel" name="user-phone" id="tel">
-                        <svg class="modal-form__svg">
-                            <use href="./images/svg/sprite.svg#icon-phone-black"></use>
-                        </svg>
-                    </div>
-    
-                    <label class="modal-form__label" for="email">Email</label>
-                    <div class="modal-form__container">
-                        <input class="modal-form__input" type="email" name="user-email" id="email">
-                        <svg class="modal-form__svg">
-                            <use href="./images/svg/sprite.svg#icon-email-black"></use>
-                        </svg>
-                    </div>   
-    
-                    <label class="modal-form__label" for="comment">Organization purpose</label>
-                    <textarea class="modal-form__comment" name="user-comment" id="comment"></textarea>
-                   
-                    <div class="modal-form__policy">
-                        <button class="modal-button" type="submit">SEND</button>
-                    </div>
-                </form>    
-            </div>         
-        </div>
-    </div>
-    <script src="./js/modal.js"></script>
-    <script src="./js/menu.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

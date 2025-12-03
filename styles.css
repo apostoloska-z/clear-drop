@@ -1,0 +1,1441 @@
+/* ========================================
+   GLACIER WATER LAB — STYLES
+   Colors: #E0F7FA, #B3E5FC, #0288D1, #01579B
+   ======================================== */
+
+:root {
+    --color-lightest: #E0F7FA;
+    --color-light: #B3E5FC;
+    --color-primary: #0288D1;
+    --color-dark: #01579B;
+    --color-white: #ffffff;
+    --color-text: #1a3a4a;
+    --color-text-light: #5a7a8a;
+    --color-dirty-water: #8B6914;
+    --color-filtered-water: #64B5F6;
+    --color-clean-water: #4FC3F7;
+    
+    --shadow-sm: 0 2px 8px rgba(2, 136, 209, 0.1);
+    --shadow-md: 0 4px 20px rgba(2, 136, 209, 0.15);
+    --shadow-lg: 0 8px 40px rgba(2, 136, 209, 0.2);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    background: var(--color-lightest);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--color-primary);
+}
+
+.nav__list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav__link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: var(--transition);
+}
+
+.nav__link:hover {
+    color: var(--color-primary);
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+/* Eco Quest CTA Button in Nav */
+.nav__link--cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    animation: pulse-glow 2s ease-in-out infinite;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav__link--cta::after {
+    display: none;
+}
+
+.nav__link--cta:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    color: white !important;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(2, 136, 209, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(2, 136, 209, 0.8); }
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav__toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-dark);
+    transition: var(--transition);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: var(--radius-lg);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn--primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover {
+    background: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+.section {
+    padding: 80px 0;
+}
+
+.section--alt {
+    background: var(--color-white);
+}
+
+.section__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section__subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-lightest) 0%, var(--color-light) 50%, var(--color-lightest) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(2, 136, 209, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero__title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.hero__subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    margin-bottom: 32px;
+    line-height: 1.8;
+}
+
+.hero__visual {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__drop {
+    width: 200px;
+    height: 260px;
+    background: linear-gradient(180deg, var(--color-light) 0%, var(--color-primary) 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero__drop--2 {
+    width: 100px;
+    height: 130px;
+    left: 20%;
+    top: 20%;
+    animation-delay: -1s;
+    opacity: 0.7;
+}
+
+.hero__drop--3 {
+    width: 60px;
+    height: 78px;
+    right: 15%;
+    bottom: 20%;
+    animation-delay: -2s;
+    opacity: 0.5;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ========================================
+   EXPERIMENT
+   ======================================== */
+.experiment__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.experiment__text p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.experiment__list {
+    list-style: none;
+    margin: 24px 0;
+    padding-left: 8px;
+}
+
+.experiment__list li {
+    padding: 8px 0;
+    font-size: 1.05rem;
+}
+
+.infographic--setup {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.cup-tower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+}
+
+.cup__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    width: 100px;
+    text-align: right;
+}
+
+.cup__content {
+    width: 80px;
+    height: 50px;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border: 3px solid var(--color-primary);
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cup__content--stones-large {
+    background: linear-gradient(to top, #78909C 70%, transparent 70%);
+}
+
+.cup__content--stones-small {
+    background: linear-gradient(to top, #90A4AE 70%, transparent 70%);
+}
+
+.cup__content--sand {
+    background: linear-gradient(to top, #FFCC80 70%, transparent 70%);
+}
+
+.cup__content--cotton {
+    background: linear-gradient(to top, #F5F5F5 70%, transparent 70%);
+}
+
+.cup__content--water {
+    background: linear-gradient(to top, var(--color-clean-water) 60%, transparent 60%);
+}
+
+.cup--final .cup__content {
+    width: 100px;
+    height: 70px;
+    border-color: var(--color-dark);
+}
+
+/* ========================================
+   FILTRATION CARDS
+   ======================================== */
+.filtration__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: var(--color-lightest);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.card__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+}
+
+.card__text {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.filtration__diagram {
+    background: var(--color-lightest);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    overflow-x: auto;
+}
+
+.diagram-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-width: max-content;
+}
+
+.diagram-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.diagram-cup {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.diagram-cup--dirty {
+    background: #D7CCC8;
+}
+
+.diagram-cup--filter {
+    background: var(--color-light);
+}
+
+.diagram-cup--clean {
+    background: var(--color-clean-water);
+}
+
+.diagram-step span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.diagram-arrow {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* ========================================
+   WATER QUALITY
+   ======================================== */
+.quality__glasses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.glass {
+    text-align: center;
+}
+
+.glass__container {
+    width: 120px;
+    height: 160px;
+    border: 4px solid var(--color-primary);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 16px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.glass__water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75%;
+    transition: var(--transition);
+}
+
+.glass__water--dirty {
+    background: linear-gradient(180deg, #A67C52 0%, #8B6914 100%);
+}
+
+.glass__water--filtered {
+    background: linear-gradient(180deg, #81D4FA 0%, #64B5F6 100%);
+}
+
+.glass__water--clean {
+    background: linear-gradient(180deg, #B3E5FC 0%, #4FC3F7 100%);
+}
+
+.sediment {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: #5D4037;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.sparkle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+.glass__label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.glass__arrow {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.quality__summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.quality__card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.quality__card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--color-dark);
+}
+
+.quality__card ul {
+    list-style: none;
+}
+
+.quality__card li {
+    padding: 6px 0;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.quality__card li::before {
+    content: '• ';
+    color: var(--color-primary);
+}
+
+/* ========================================
+   SDG 6
+   ======================================== */
+.sdg__content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sdg__poster {
+    background: linear-gradient(135deg, #26C6DA 0%, #0097A7 100%);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.sdg__badge {
+    margin-bottom: 24px;
+}
+
+.sdg__number {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.sdg__text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.sdg__icon {
+    font-size: 4rem;
+}
+
+.sdg__description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.sdg__targets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.target {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--color-lightest);
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+}
+
+.target__number {
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+}
+
+.target__text {
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+/* ========================================
+   ECO QUEST - EXPANDED
+   ======================================== */
+.ecoquest {
+    background: linear-gradient(180deg, var(--color-lightest) 0%, var(--color-light) 100%);
+}
+
+.ecoquest__header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Progress Bar */
+.ecoquest__progress {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: 24px 32px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+.progress__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.progress__label {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.progress__value {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.progress__bar {
+    height: 24px;
+    background: var(--color-lightest);
+    border-radius: 12px;
+    position: relative;
+    overflow: visible;
+}
+
+.progress__fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-light) 0%, var(--color-primary) 50%, var(--color-dark) 100%);
+    border-radius: 12px;
+    width: 0%;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.progress__fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--color-white);
+    border: 4px solid var(--color-primary);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.progress__milestone {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.milestone__dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    margin: 0 auto 4px;
+}
+
+.milestone__label {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Game Grid */
+.ecoquest__game {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.ecoquest__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Categories */
+.ecoquest__category {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.category__title {
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-lightest);
+}
+
+.category__options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ecoquest__option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--color-lightest);
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.ecoquest__option:hover {
+    transform: translateX(6px);
+    border-color: var(--color-light);
+    background: var(--color-white);
+}
+
+.ecoquest__option input {
+    display: none;
+}
+
+.ecoquest__option input:checked ~ .ecoquest__label {
+    color: var(--color-dark);
+}
+
+.ecoquest__checkbox {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    position: relative;
+    flex-shrink: 0;
+    transition: var(--transition);
+    background: var(--color-white);
+}
+
+.ecoquest__option input:checked + .ecoquest__checkbox {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.ecoquest__option input:checked + .ecoquest__checkbox::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ecoquest__label {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    gap: 12px;
+}
+
+.option__text {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.ecoquest__ml {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.btn--calculate {
+    margin-top: 8px;
+    padding: 18px 36px;
+    font-size: 1.1rem;
+}
+
+/* Results Panel */
+.ecoquest__results {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ecoquest__result {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+    border-radius: var(--radius-xl);
+    padding: 40px 32px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.result__display {
+    margin-bottom: 12px;
+}
+
+.result__value {
+    font-size: 4.5rem;
+    font-weight: 800;
+    display: block;
+    line-height: 1;
+    transition: var(--transition);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.result__unit {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.result__liters {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    min-height: 24px;
+}
+
+.result__badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 14px 24px;
+    border-radius: var(--radius-lg);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+.badge__icon {
+    font-size: 1.4rem;
+}
+
+.badge__text {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Achievements */
+.ecoquest__achievements {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.achievements__title {
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.achievements__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.achievement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px 8px;
+    background: var(--color-lightest);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.achievement[data-unlocked="true"] {
+    opacity: 1;
+    filter: grayscale(0%);
+    background: linear-gradient(135deg, #FFF9C4 0%, #FFECB3 100%);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+.achievement__icon {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.achievement__name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 2px;
+}
+
+.achievement__desc {
+    font-size: 0.65rem;
+    color: var(--color-text-light);
+}
+
+/* Fun Facts */
+.ecoquest__facts {
+    margin-bottom: 48px;
+}
+
+.facts__title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+}
+
+.facts__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.fact {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.fact:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.fact__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.fact__text {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* Daily Challenge */
+.ecoquest__challenge {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #004D73 100%);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.challenge__badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.challenge__title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.challenge__text {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.challenge__meter {
+    display: flex;
+    justify-content: center;
+}
+
+.meter__glass {
+    width: 80px;
+    height: 180px;
+    background: rgba(255,255,255,0.1);
+    border: 4px solid rgba(255,255,255,0.4);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.meter__water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: linear-gradient(180deg, var(--color-light) 0%, var(--color-primary) 100%);
+    transition: height 0.8s ease;
+    border-radius: 0 0 calc(var(--radius-lg) - 4px) calc(var(--radius-lg) - 4px);
+}
+
+.meter__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 2px dashed rgba(255,255,255,0.3);
+}
+
+.meter__line span {
+    position: absolute;
+    right: -40px;
+    top: -10px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.meter__line--1 { bottom: 33%; }
+.meter__line--2 { bottom: 66%; }
+.meter__line--3 { bottom: 100%; }
+
+/* ========================================
+   ECO QUEST MODAL
+   ======================================== */
+.ecoquest-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ecoquest-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ecoquest-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(1, 87, 155, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.ecoquest-modal__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+}
+
+.ecoquest-modal.active .ecoquest-modal__container {
+    transform: translateY(0);
+}
+
+.ecoquest-modal__close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 2001;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: var(--color-white);
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ecoquest-modal__close:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.ecoquest-modal .ecoquest {
+    background: transparent;
+    padding-top: 100px;
+}
+
+.ecoquest-modal .section__title,
+.ecoquest-modal .section__subtitle {
+    color: white;
+}
+
+.ecoquest-modal .ecoquest__progress {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.ecoquest-modal .ecoquest__category {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.ecoquest-modal .ecoquest__achievements {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.ecoquest-modal .facts__title {
+    color: white;
+}
+
+.ecoquest-modal .fact {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Body scroll lock when modal open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer__text {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.footer__year {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+    .hero__container,
+    .experiment__grid,
+    .sdg__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero__visual {
+        height: 300px;
+    }
+    
+    .filtration__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ecoquest__game {
+        grid-template-columns: 1fr;
+    }
+    
+    .facts__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ecoquest__challenge {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav__list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 8px;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .nav__list.active {
+        display: flex;
+    }
+    
+    .nav__toggle {
+        display: flex;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .section__title {
+        font-size: 1.8rem;
+    }
+    
+    .filtration__cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .quality__summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .quality__glasses {
+        flex-direction: column;
+    }
+    
+    .glass__arrow {
+        transform: rotate(90deg);
+    }
+    
+    .sdg__poster {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .diagram-flow {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .diagram-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+    
+    .hero__title {
+        font-size: 1.7rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+    
+    .ecoquest__option {
+        padding: 14px;
+    }
+    
+    .ecoquest__label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .result__value {
+        font-size: 3rem;
+    }
+    
+    .facts__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ecoquest__progress {
+        padding: 20px;
+    }
+    
+    .milestone__label {
+        display: none;
+    }
+    
+    .ecoquest__challenge {
+        padding: 28px 20px;
+    }
+    
+    .challenge__title {
+        font-size: 1.4rem;
+    }
+}
+
