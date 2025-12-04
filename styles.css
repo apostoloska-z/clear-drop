@@ -1456,9 +1456,16 @@ body.modal-open {
         padding: 20px;
     }
     
-    .milestone__label {
-        display: none;
-    }
+.milestone__label {
+    display: none;
+}
+
+.progress__milestone[data-ml="1000"] .milestone__label,
+.progress__milestone[data-ml="2000"] .milestone__label,
+.progress__milestone[data-ml="3000"] .milestone__label {
+    display: block;
+    font-size: 0.6rem;
+}
     
     .ecoquest__challenge {
         padding: 28px 20px;
