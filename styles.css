@@ -83,6 +83,7 @@ body {
 
 .nav__list {
     display: flex;
+    align-items: center;
     gap: 24px;
     list-style: none;
 }
@@ -130,6 +131,10 @@ body {
     border: none;
     cursor: pointer;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
 }
 
 .nav__link--cta::after {
@@ -162,6 +167,13 @@ body {
     height: 2px;
     background: var(--color-dark);
     transition: var(--transition);
+}
+
+/* Mobile Eco Quest button - hidden on desktop */
+.nav__cta-mobile {
+    display: none;
+    padding: 8px 12px;
+    font-size: 1.2rem;
 }
 
 /* ========================================
@@ -748,12 +760,13 @@ body {
     width: 0%;
     transition: width 0.8s ease;
     position: relative;
+    min-width: 32px;
 }
 
 .progress__fill::after {
     content: '';
     position: absolute;
-    right: 0;
+    right: -16px;
     top: 50%;
     transform: translateY(-50%);
     width: 32px;
@@ -1317,6 +1330,12 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
     .nav__list {
         display: none;
         position: absolute;
@@ -1336,6 +1355,17 @@ body.modal-open {
     
     .nav__toggle {
         display: flex;
+        order: 2;
+    }
+    
+    /* Eco Quest button visible on mobile */
+    .nav__list li:last-child {
+        display: none;
+    }
+    
+    .nav__cta-mobile {
+        display: block;
+        order: 1;
     }
     
     .hero__title {

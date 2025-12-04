@@ -65,17 +65,21 @@ function initMobileNav() {
 // ========================================
 function initEcoQuestModal() {
     const openBtn = document.getElementById('open-ecoquest');
+    const openBtnMobile = document.getElementById('open-ecoquest-mobile');
     const closeBtn = document.getElementById('close-ecoquest');
     const modal = document.getElementById('ecoquest-modal');
     const overlay = document.getElementById('ecoquest-overlay');
     
-    if (!openBtn || !modal) return;
+    if (!modal) return;
     
-    // Open modal
-    openBtn.addEventListener('click', () => {
+    function openModal() {
         modal.classList.add('active');
         document.body.classList.add('modal-open');
-    });
+    }
+    
+    // Open modal
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (openBtnMobile) openBtnMobile.addEventListener('click', openModal);
     
     // Close modal
     closeBtn.addEventListener('click', closeModal);
